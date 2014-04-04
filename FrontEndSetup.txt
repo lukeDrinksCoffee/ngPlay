@@ -1,0 +1,22 @@
+Front end dev environment setup
+	(1) install yeoman. Follow instructions here: http://yeoman.io/gettingstarted.html
+		- Add git to the PATH ( C:\Program Files (x86)\Git\bin )
+		- Use npm to install karma ( npm install -g karma )
+
+	(2) initial project scaffolding built with yeoman using ( yo angular )
+		Yeoman options:
+			[?] Would you like to use Sass (with Compass)? No
+			[?] Would you like to include Bootstrap? Yes
+			[?] Which modules would you like to include? (Press <space> to select)
+			>[X] angular-resource.js
+			 [X] angular-cookies.js
+			 [X] angular-sanitize.js
+			 [X] angular-route.js
+		
+		Once Yeoman completes do:
+		- Use npm to install karma-jasmine ( npm install karma-jasmine --save-dev )
+		- Use npm to install chrome launcher ( npm install karma-chrome-launcher --save-dev )
+
+	- Run grunt tests to validate scaffolding ( grunt test )
+
+Note: This process doesn't seem to work every time. If fails, delete everything and start again from (2)
