@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('ngPlayfrontspaApp', [
+  .module('ngPlay', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -12,6 +12,10 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/echo', {
+        templateUrl: 'views/echo.html',
+        controller: 'EchoController'
       })
       .otherwise({
         redirectTo: '/'
