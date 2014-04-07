@@ -6,17 +6,20 @@ describe('Service: EchoService', function () {
   beforeEach(module('ngPlay'));
 
   // instantiate service
-  var echoSvc, $httpBackend;
+  var echoSvc, $httpBackend, appSettings, webApiUrl;
   beforeEach(inject(function($injector) {
     $httpBackend = $injector.get('$httpBackend');
+    appSettings = $injector.get('AppSettings');
     echoSvc = $injector.get('EchoService');
+
+    webApiUrl = appSettings.webApiUrl;
   }));
 
   it('should resolve the promise when successful HTTP GET', function () {
 
     var sampleData = JSON.stringify({echo: 'echo response'});
 
-    $httpBackend.expectGET('http://localhost:51995/api/echo?value=hello').
+    $httpBackend.expectGET(webApiUrl + '/echo?value=hello').
       respond(200, sampleData);
 
     var promiseResolved = false;
@@ -35,7 +38,7 @@ describe('Service: EchoService', function () {
 
   it('should reject the promise when failed HTTP GET', function () {
 
-    $httpBackend.expectGET('http://localhost:51995/api/echo?value=hello').
+    $httpBackend.expectGET(webApiUrl + '/echo?value=hello').
       respond(500, JSON.stringify({echo: 'echo response'}));
 
     var promiseRejected = false;

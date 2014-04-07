@@ -1,13 +1,16 @@
 'use strict';
 
-angular
-  .module('ngPlay', [
+angular.
+  module('ngPlay', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ngRoute'
-  ])
-  .config(function ($routeProvider) {
+  ]).
+  constant('AppSettings', {
+    webApiUrl: 'http://localhost:51995/api'
+  }).
+  config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
