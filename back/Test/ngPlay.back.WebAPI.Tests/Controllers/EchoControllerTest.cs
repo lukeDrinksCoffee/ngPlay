@@ -1,4 +1,5 @@
-﻿using ngPlay.back.WebAPI.Controllers;
+﻿using ngPlay.back.Domain.Contracts;
+using ngPlay.back.WebAPI.Controllers;
 using NUnit.Framework;
 using System.IO;
 using System.Web;
@@ -9,6 +10,7 @@ using System.Web;
 //
 //    UnitOfWork_StateUnderTest_ExpectedOutcome
 //
+using Rhino.Mocks;
 
 namespace ngPlay.back.WebAPI.Tests.Controllers
 {
@@ -19,7 +21,8 @@ namespace ngPlay.back.WebAPI.Tests.Controllers
         public void HttpGet_BasicCall_ReturnsValueWithTimeAppended()
         {
             // ARRANGE
-            var controller = new EchoController();
+            var serviceMock = MockRepository.GenerateMock<IAppLogService>();
+            var controller = new EchoController(serviceMock);
             const string value = "hello";
 
             HttpContext.Current = new HttpContext(new HttpRequest("", "http://tempuri.org", ""),

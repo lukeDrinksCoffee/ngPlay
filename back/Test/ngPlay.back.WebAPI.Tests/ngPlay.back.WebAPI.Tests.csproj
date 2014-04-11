@@ -94,6 +94,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ngPlay.back.Domain\ngPlay.back.Domain.csproj">
+      <Project>{4496ce07-76d1-4a57-a702-6e2af845213d}</Project>
+      <Name>ngPlay.back.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ngPlay.back.WebAPI\ngPlay.back.WebAPI.csproj">
       <Project>{14353cfd-456b-446e-9b5b-86ea7a4c87b5}</Project>
       <Name>ngPlay.back.WebAPI</Name>
