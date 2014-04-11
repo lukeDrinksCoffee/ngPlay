@@ -77,3 +77,40 @@ body {
     border-bottom: 0;
   }
 }
+
+
+/* Compliment bootstrap */
+
+.glyph-heading h1 {
+    line-height: 1.33;
+    padding-top: 1px;
+}
+
+.glyphicons-heading {
+    font-size: 36px;
+    line-height: 1.33;
+    border-radius: 6px;
+    float: left;
+    margin-right: 10px;
+}
+
+textarea.input-lgr {
+    width: 450px;
+    height: 400px;
+    padding: 10px 16px;
+    line-height: 1.33;
+    border-radius: 6px;
+}
+
+textarea.input-smlr {
+    width: 400px;
+    height: 100px;
+    padding: 10px 16px;
+    line-height: 1.33;
+    border-radius: 6px;
+}
+
+.field-in-error {
+    border-color: red;
+    background-color: rgb(255, 227, 223);
+}
