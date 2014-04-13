@@ -11,6 +11,8 @@ namespace ngPlay.back.WebAPI
 {
     public class IoCConfig
     {
+        public static IContainer Container;
+
         public static void RegisterDependencies()
         {
             // Create the container builder.
@@ -22,10 +24,15 @@ namespace ngPlay.back.WebAPI
             // Register other dependencies.
             builder.RegisterType<AppLogService>().As<IAppLogService>().InstancePerApiRequest();
             builder.RegisterType<AppLogRepository>().As<IAppLogRepository>().InstancePerApiRequest();
-            builder.RegisterInstance<NgPlayDataContext>(new NgPlayDataContext()).AsSelf();
+
+            var dataContext = new NgPlayDataContext();
+
+            builder.RegisterInstance(dataContext).AsSelf();
+            builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
 
             // Build the container.
             var container = builder.Build();
+            Container = container;
 
             // Create the depenedency resolver.
             var resolver = new AutofacWebApiDependencyResolver(container);

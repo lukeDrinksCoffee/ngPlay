@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E576AD6F-4436-4803-8BD9-4F52ECFF3B03}</ProjectGuid>
+    <ProjectGuid>{A3ECC6BB-406B-4FCD-9452-A273A51B32A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ngPlay.back.Data</RootNamespace>
-    <AssemblyName>ngPlay.back.Data</AssemblyName>
+    <RootNamespace>ngPlay.back.Identity</RootNamespace>
+    <AssemblyName>ngPlay.back.Identity</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,22 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppLogRepository.cs" />
-    <Compile Include="Contracts\IAppLogRepository.cs" />
-    <Compile Include="Contracts\IUserRepository.cs" />
-    <Compile Include="Entities\AppLog.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Models\PetaPoco.cs" />
-    <Compile Include="NgPlayDataContext.cs" />
+    <Compile Include="IdentityUser.cs" />
+    <Compile Include="UserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\ngPlay.back.Data\ngPlay.back.Data.csproj">
+      <Project>{e576ad6f-4436-4803-8bd9-4f52ecff3b03}</Project>
+      <Name>ngPlay.back.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
