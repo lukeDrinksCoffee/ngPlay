@@ -41,7 +41,9 @@ namespace ngPlay.back.WebAPI.Controllers
         {
             get
             {
-                return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ??
+                           (Request != null ? Request.GetOwinContext().GetUserManager<ApplicationUserManager>()
+                                            : null);
             }
             private set
             {
@@ -375,7 +377,7 @@ namespace ngPlay.back.WebAPI.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing && UserManager != null)
             {
                 UserManager.Dispose();
             }

@@ -8,6 +8,9 @@
 USE [master]
 GO
 
+DROP DATABASE [ngPlay]
+GO
+
 /****** Object:  Database [ngPlay]    Script Date: 11/04/2014 5:48:41 PM ******/
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'ngPlay')
 BEGIN
@@ -148,27 +151,19 @@ END
 GO
 
 
-
 CREATE TABLE [dbo].[User] (
-    [UserID]                                  INT            IDENTITY (1000, 1) NOT NULL,
-    [UserName]                                NVARCHAR (50)  NOT NULL,
-    [DisplayName]                             NVARCHAR (50)  NULL,
-    [Email]                                   NVARCHAR (100) NOT NULL,
-    [EmailHash]                               AS             (lower(CONVERT([varchar](32),hashbytes('MD5',CONVERT([varchar],lower(rtrim(ltrim([Email]))),(0))),(2)))) PERSISTED,
-    [PasswordHash]                            VARBINARY (24) NULL,
-    [PasswordSalt]                            VARBINARY (24) NULL,
-    [PasswordQuestion]                        NVARCHAR (256) NULL,
-    [PasswordAnswer]                          NVARCHAR (128) NULL,
-    [IsApproved]                              BIT            NOT NULL,
-    [IsLockedOut]                             BIT            NOT NULL,
-    [CreatedDate]                             DATETIME       NOT NULL,
-    [LastLoginDate]                           DATETIME       NOT NULL,
-    [LastActivityDate]                        DATETIME       NOT NULL,
-    [LastPasswordChangedDate]                 DATETIME       NULL,
-    [LastLockoutDate]                         DATETIME       NULL,
-    [FailedPasswordAttemptCount]              INT            NOT NULL,
-    [FailedPasswordAttemptWindowStart]        DATETIME       NULL,
-    [FailedPasswordAnswerAttemptCount]        INT            NOT NULL,
-    [FailedPasswordAnswerAttemptWindowsStart] DATETIME       NULL,
-    [Comment]                                 NVARCHAR (256) NULL
+    [UserId]               INT            IDENTITY (1000, 1) NOT NULL,
+    [Email]                NVARCHAR (256) NULL,
+    [EmailConfirmed]       BIT            NOT NULL DEFAULT(0),
+    [PasswordHash]         NVARCHAR (MAX) NULL,
+    [SecurityStamp]        NVARCHAR (MAX) NULL,
+    [PhoneNumber]          NVARCHAR (MAX) NULL,
+    [PhoneNumberConfirmed] BIT            NOT NULL DEFAULT(0),
+    [TwoFactorEnabled]     BIT            NOT NULL DEFAULT(0),
+    [LockoutEndDateUtc]    DATETIME       NULL,
+    [LockoutEnabled]       BIT            NOT NULL DEFAULT(0),
+    [AccessFailedCount]    INT            NOT NULL DEFAULT(0),
+    [UserName]             NVARCHAR (256) NOT NULL
 );
+GO
+

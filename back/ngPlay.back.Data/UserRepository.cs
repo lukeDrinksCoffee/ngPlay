@@ -27,6 +27,11 @@ namespace ngPlay.back.Data
             return _dataContext.SingleOrDefault<User>("SELECT * FROM [User] WHERE UserName = @0", name);
         }
 
+        public User GetByEmail(string email)
+        {
+            return _dataContext.SingleOrDefault<User>("SELECT * FROM [User] WHERE Email = @0", email);
+        }
+
         public int Update(User user)
         {
             return _dataContext.Update(user);

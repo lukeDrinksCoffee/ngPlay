@@ -20,6 +20,10 @@ angular.
         templateUrl: 'views/echo.html',
         controller: 'EchoController'
       })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterController'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -7,6 +7,7 @@ namespace ngPlay.back.Data.Contracts
         int Insert(User user);
         User Get(int id);
         User GetByName(string name);
+        User GetByEmail(string email);
         int Update(User user);
         int UpdatePasswordHash(User user);
         int Delete(User user);

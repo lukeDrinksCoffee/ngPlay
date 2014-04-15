@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ngPlay.back.Identity
 {
-    public class UserStore<TUser> : IUserStore<TUser>, IUserPasswordStore<TUser> where TUser : IdentityUser
+    public class UserStore<TUser> : IUserStore<TUser>, IUserPasswordStore<TUser>, IUserEmailStore<TUser> where TUser : IdentityUser
     {
         private readonly IUserRepository _userRepository;
 
@@ -88,6 +88,38 @@ namespace ngPlay.back.Identity
         public Task<bool> HasPasswordAsync(TUser user)
         {
             return Task.FromResult(!String.IsNullOrEmpty(user.PasswordHash));
+        }
+
+        public Task SetEmailAsync(TUser user, string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> GetEmailAsync(TUser user)
+        {
+            return Task.FromResult(user.Email);
+        }
+
+        public Task<bool> GetEmailConfirmedAsync(TUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SetEmailConfirmedAsync(TUser user, bool confirmed)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TUser> FindByEmailAsync(string email)
+        {
+            if (String.IsNullOrEmpty(email))
+                return Task.FromResult<TUser>(null);
+
+            var user = _userRepository.GetByEmail(email);
+            if (user == null)
+                return Task.FromResult<TUser>(null);
+
+            return Task.FromResult(IdentityUser.FromUser(user) as TUser);
         }
     }
 }
