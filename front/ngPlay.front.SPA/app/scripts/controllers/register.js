@@ -17,17 +17,15 @@ angular.module('ngPlay')
     $scope.registerVm.errorInfo = '';
 
     $scope.registerVm.registerUser = function() {
-      UserAccountService.registerUser($scope.registerVm.userData).then(
-        function(data) {
-          $scope.registerVm.isRegistered = true;
-          $scope.registerVm.errorOccurred = false;
+        UserAccountService.registerUser($scope.registerVm.userData).then(
+          function (data) {
+            $scope.registerVm.isRegistered = true;
+            $scope.registerVm.errorOccurred = false;
 
-      }, function(data) {
-          $scope.registerVm.errorOccurred = true;
-          $scope.registerVm.errorInfo = data;
+          }, function (data) {
+            $scope.registerVm.errorOccurred = true;
+            $scope.registerVm.errorInfo = data;
 
-      });
-
+          });
     };
-
   });
