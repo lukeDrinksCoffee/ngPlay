@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
@@ -34,6 +35,10 @@ namespace ngPlay.back.WebAPI.Models
 
     public class RegisterBindingModel
     {
+        [Required]
+        [Display(Name = "User Name")]
+        public string Name { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }

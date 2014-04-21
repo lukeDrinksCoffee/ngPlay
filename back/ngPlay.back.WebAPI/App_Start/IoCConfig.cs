@@ -25,11 +25,13 @@ namespace ngPlay.back.WebAPI
                 builder.RegisterOwinApplicationContainer();
 
                 // Register other dependencies.
-                builder.RegisterType<AppLogService>().As<IAppLogService>().InstancePerApiRequest();
-                builder.RegisterType<AppLogRepository>().As<IAppLogRepository>().InstancePerApiRequest();
-
                 builder.RegisterType<NgPlayDataContext>().AsSelf();
-                builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
+
+                builder.RegisterType<AppLogRepository>().As<IAppLogRepository>().InstancePerApiRequest();
+                builder.RegisterType<AppLogService>().As<IAppLogService>().InstancePerApiRequest();
+
+                builder.RegisterType<UserRepository>().As<IUserRepository>();
+                builder.RegisterType<UserService>().As<IUserService>().InstancePerApiRequest();
 
                 _container = builder.Build();
             }

@@ -40,9 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IAppLogService.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="Entities\AppLogEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AppLogService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ngPlay.back.Data\ngPlay.back.Data.csproj">

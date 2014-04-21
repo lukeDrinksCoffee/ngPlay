@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using ngPlay.back.Domain.Contracts;
 using ngPlay.back.Identity;
 using ngPlay.back.WebAPI.Models;
 using ngPlay.back.WebAPI.Providers;
@@ -25,13 +26,16 @@ namespace ngPlay.back.WebAPI.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
+        private readonly IUserService _userService;
 
-        public AccountController()
+        public AccountController(IUserService userService)
         {
+            _userService = userService;
         }
 
         public AccountController(ApplicationUserManager userManager,
-            ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
+                                 ISecureDataFormat<AuthenticationTicket> accessTokenFormat, IUserService userService)
+            : this(userService)
         {
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
@@ -41,9 +45,7 @@ namespace ngPlay.back.WebAPI.Controllers
         {
             get
             {
-                return _userManager ??
-                           (Request != null ? Request.GetOwinContext().GetUserManager<ApplicationUserManager>()
-                                            : null);
+                return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
@@ -330,7 +332,26 @@ namespace ngPlay.back.WebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            if (!_userService.IsUserNameUnique(model.Name))
+            {
+                ModelState.AddModelError("User Name", "User Name already exists");
+            }
+
+            if (!_userService.IsEmailUnique(model.Email))
+            {
+                ModelState.AddModelError("Email", "Email already exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = new ApplicationUser
+            {
+                UserName = model.Name,
+                Email = model.Email
+            };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -339,39 +360,6 @@ namespace ngPlay.back.WebAPI.Controllers
                 return GetErrorResult(result);
             }
 
-            return Ok();
-        }
-
-        // POST api/Account/RegisterExternal
-        [OverrideAuthentication]
-        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
-        [Route("RegisterExternal")]
-        public async Task<IHttpActionResult> RegisterExternal(RegisterExternalBindingModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var info = await Authentication.GetExternalLoginInfoAsync();
-            if (info == null)
-            {
-                return InternalServerError();
-            }
-
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
-
-            IdentityResult result = await UserManager.CreateAsync(user);
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
-
-            result = await UserManager.AddLoginAsync(user.Id, info.Login);
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
             return Ok();
         }
 
