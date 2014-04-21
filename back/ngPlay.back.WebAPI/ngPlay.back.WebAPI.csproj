@@ -43,9 +43,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac.Integration.Owin">
+      <HintPath>..\packages\Autofac.Owin.3.0.0-alpha3\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Autofac.Integration.WebApi, Version=3.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Autofac.WebApi2.3.2.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi.Owin">
+      <HintPath>..\packages\Autofac.WebApi2.Owin.3.0.0-alpha3\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetDoodle.Owin.Dependencies">
+      <HintPath>..\packages\DotNetDoodle.Owin.Dependencies.0.3.0-pre01\lib\net45\DotNetDoodle.Owin.Dependencies.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetDoodle.Owin.Dependencies.Adapters.WebApi">
+      <HintPath>..\packages\DotNetDoodle.Owin.Dependencies.Adapters.WebApi.0.3.0-pre01\lib\net45\DotNetDoodle.Owin.Dependencies.Adapters.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetDoodle.Owin.Dependencies.Autofac">
+      <HintPath>..\packages\DotNetDoodle.Owin.Dependencies.Autofac.0.3.0-pre01\lib\net45\DotNetDoodle.Owin.Dependencies.Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>

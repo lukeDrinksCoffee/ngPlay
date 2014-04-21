@@ -1,10 +1,12 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using ngPlay.back.Data.Contracts;
 using ngPlay.back.Identity;
 using ngPlay.back.WebAPI.Models;
+using Owin;
 
 namespace ngPlay.back.WebAPI
 {
@@ -19,8 +21,10 @@ namespace ngPlay.back.WebAPI
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            // TODO LEO Get UserRepository in a cleaner way
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(IoCConfig.Container.BeginLifetimeScope().Resolve<IUserRepository>()));
+            IServiceProvider requestContainer = context.Environment.GetRequestContainer();
+            var repository = requestContainer.GetService(typeof (IUserRepository)) as IUserRepository;
+
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(repository));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
