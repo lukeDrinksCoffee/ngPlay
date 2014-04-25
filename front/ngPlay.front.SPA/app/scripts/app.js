@@ -8,6 +8,7 @@ angular.
     'ngRoute'
   ]).
   constant('AppSettings', {
+    baseUrl: 'http://localhost:51995',
     webApiUrl: 'http://localhost:51995/api'
   }).
   config(function ($routeProvider) {
@@ -21,8 +22,14 @@ angular.
         controller: 'EchoController'
       })
       .when('/register', {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterController'
+        templateUrl: 'views/register.html'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html'
+      })
+      .when('/notes', {
+        templateUrl: 'views/notes.html',
+        controller: 'NotesController'
       })
       .otherwise({
         redirectTo: '/'

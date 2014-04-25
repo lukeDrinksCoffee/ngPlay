@@ -124,3 +124,14 @@ div .input-feedback {
     margin-bottom: 20px;
     min-width: 300px;
 }
+
+.align-with-button {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 6px;
+}
+
+.err-text {
+    color: #a94442;
+    font-weight: bold;
+}

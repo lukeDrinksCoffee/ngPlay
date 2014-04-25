@@ -5,7 +5,7 @@
              data-ng-class="{ 'has-error has-feedback' : registerForm.inputUserName.$error.required
                                                              && registerForm.inputUserName.$dirty }">
             <label for="inputUserName" class="col-sm-3 control-label">User Name</label>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <input type="text" class="form-control" id="inputUserName" name="inputUserName"
                        placeholder="User Name" required data-ng-model="registerVm.userData.name"
                        data-ng-disabled="registerVm.working === true">
@@ -15,7 +15,7 @@
              data-ng-class="{ 'has-error has-feedback' : registerForm.inputEmail.$invalid
                                                              && registerForm.inputEmail.$dirty }">
             <label for="inputEmail" class="col-sm-3 control-label">Email</label>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email"
                        required data-ng-model="registerVm.userData.email"
                        data-ng-disabled="registerVm.working === true">
@@ -25,7 +25,7 @@
              data-ng-class="{ 'has-error has-feedback' : registerForm.inputPassword.$invalid
                                                              && registerForm.inputPassword.$dirty }">
             <label for="inputPassword" class="col-sm-3 control-label">Password</label>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <input type="password" class="form-control" id="inputPassword" name="inputPassword"
                        placeholder="Password" required data-ng-model="registerVm.userData.password"
                        data-ap-password-strength-directive data-ng-disabled="registerVm.working === true">
@@ -35,7 +35,7 @@
              data-ng-class="{ 'has-error has-feedback' : registerForm.inputConfirmPassword.$invalid
                                                              && registerForm.inputConfirmPassword.$dirty }">
             <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <input type="password" class="form-control" id="inputConfirmPassword" name="inputConfirmPassword"
                        placeholder="Password" required data-ng-model="registerVm.userData.confirmPassword"
                        data-ap-match-directive data-match-to="registerVm.userData.password"
@@ -86,7 +86,7 @@
 
     <div data-ng-show="registerVm.isRegistered">
         <h3>Registered!</h3>
-        Thanks for registering.
+        Thanks for registering. Please <a href="#/login">login</a> to continue.
     </div>
 
     <div data-ng-show="registerVm.errorOccurred">

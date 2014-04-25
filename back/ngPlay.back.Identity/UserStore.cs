@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ngPlay.back.Identity
 {
-    public class UserStore<TUser> : IUserStore<TUser>, IUserPasswordStore<TUser>, IUserEmailStore<TUser> where TUser : IdentityUser
+    public class UserStore<TUser> : IUserStore<TUser>, IUserPasswordStore<TUser>, IUserEmailStore<TUser> where TUser : IdentityUser, new()
     {
         private readonly IUserRepository _userRepository;
 
@@ -58,7 +58,10 @@ namespace ngPlay.back.Identity
             if (user == null)
                 return Task.FromResult<TUser>(null);
 
-            return Task.FromResult(IdentityUser.FromUser(user) as TUser);
+            var tUser = new TUser();
+            tUser.PopulateFromUser(user);
+
+            return Task.FromResult(tUser);
         }
 
         public Task<TUser> FindByNameAsync(string userName)
@@ -70,7 +73,10 @@ namespace ngPlay.back.Identity
             if (user == null)
                 return Task.FromResult<TUser>(null);
 
-            return Task.FromResult(IdentityUser.FromUser(user) as TUser);
+            var tUser = new TUser();
+            tUser.PopulateFromUser(user);
+
+            return Task.FromResult(tUser);
         }
 
         public Task SetPasswordHashAsync(TUser user, string passwordHash)
@@ -119,7 +125,10 @@ namespace ngPlay.back.Identity
             if (user == null)
                 return Task.FromResult<TUser>(null);
 
-            return Task.FromResult(IdentityUser.FromUser(user) as TUser);
+            var tUser = new TUser();
+            tUser.PopulateFromUser(user);
+
+            return Task.FromResult(tUser);
         }
     }
 }

@@ -25,6 +25,11 @@ namespace ngPlay.back.Identity
             return Mapper.Map<IdentityUser, User>(this);
         }
 
+        public virtual void PopulateFromUser(User user)
+        {
+            Mapper.Map(user, this);
+        }
+
         public static IdentityUser FromUser(User user)
         {
             return Mapper.Map<User, IdentityUser>(user);
