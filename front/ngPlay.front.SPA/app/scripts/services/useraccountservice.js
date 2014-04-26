@@ -58,8 +58,18 @@ angular.module('ngPlay')
       },
 
       logoutUser : function() {
-        serviceInstance.accessToken = '';
-        delete $http.defaults.headers.common.Authorization;
+        var logoutUrl = AppSettings.webApiUrl + '/Account/Logout';
+
+        var deferred = $q.defer();
+
+        $http.post(logoutUrl).then(function() {
+          serviceInstance.accessToken = '';
+          delete $http.defaults.headers.common.Authorization;
+
+          deferred.resolve();
+        });
+
+        return deferred.promise;
       }
 
     };

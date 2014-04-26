@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: apRegisterDirective', function () {
+describe('Directive: apUserInfoDirective', function () {
 
   // load the directive's module
   beforeEach(module('ngPlay'));
@@ -13,9 +13,9 @@ describe('Directive: apRegisterDirective', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<ap-register-directive></ap-register-directive>');
+    element = angular.element('<ap-user-info-directive></ap-user-info-directive>');
     element = $compile(element)(scope);
-    // expect(element.text()).toBe('this is the apRegisterDirective directive');
+    // expect(element.text()).toBe('this is the apUserInfoDirective directive');
 
     // TODO LEO implement
   }));

@@ -31,6 +31,9 @@ angular.
         templateUrl: 'views/notes.html',
         controller: 'NotesController'
       })
+      .when('/logout', {
+        templateUrl: 'views/logout.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

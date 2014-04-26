@@ -10,4 +10,12 @@ angular.module('ngPlay')
       return UserAccountService.isLoggedIn();
     }
 
+    $scope.logout = function() {
+      UserAccountService.logoutUser().then(
+        function() {
+          $location.path('/logout');
+        }
+      )
+    }
+
   });
