@@ -2,10 +2,10 @@
 
 namespace ngPlay.back.Data.Entities
 {
-    [PetaPoco.PrimaryKey("UserID", autoIncrement = true)]
+    [PetaPoco.PrimaryKey("UserId", autoIncrement = true)]
     public class User
     {
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public String Email { get; set; }
         public bool EmailConfirmed { get; set; }
         public String PasswordHash { get; set; }

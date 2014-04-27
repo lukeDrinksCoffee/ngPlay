@@ -12,7 +12,8 @@ angular.module('ngPlay')
           success(function(data /*, status, headers, config */ ) {
             deferred.resolve(data);
           }).
-          error(function( /* data, status, headers, config */ ) {
+          error(function( data, status, headers, config ) {
+            console.log(data);
             deferred.reject();
           });
 

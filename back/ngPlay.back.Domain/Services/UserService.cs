@@ -6,26 +6,26 @@ namespace ngPlay.back.Domain.Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository _repository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(IUserRepository repository)
+        public UserService(IUserRepository userRepository)
         {
-            _repository = repository;
+            _userRepository = userRepository;
         }
 
         public bool IsUserNameUnique(string name)
         {
-            return _repository.GetByName(name) == null;
+            return _userRepository.GetByName(name) == null;
         }
 
         public bool IsEmailUnique(string email)
         {
-            return _repository.GetByEmail(email) == null;
+            return _userRepository.GetByEmail(email) == null;
         }
 
         public User GetUser(int id)
         {
-            return _repository.Get(id);
+            return _userRepository.Get(id);
         }
     }
 }

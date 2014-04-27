@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="useraccountservice.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/useraccountservice.js">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="606" max-vertical-offset="1734">
-              <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+            <state vertical-scroll-proportion="-30.807692" vertical-offset="491" max-vertical-offset="1462">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -37,17 +37,7 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/directives/apuserinfodirective.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-              <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,54 +53,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/navbar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/directives/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="867">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-              <folding>
-                <marker date="1398585834518" expanded="true" signature="167:332" placeholder="{...}" />
-                <marker date="1398585834518" expanded="true" signature="820:978" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.692308" vertical-offset="491" max-vertical-offset="1445">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notes.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="notes.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/notes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.055982437" vertical-offset="0" max-vertical-offset="911">
-              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="527">
+              <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appasswordstrengthdirective.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/directives/appasswordstrengthdirective.js">
+      <file leaf-file-name="notes.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/notes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="18" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apnotedirective.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/directives/apnotedirective.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/navbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="799">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="note.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/directives/note.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.111964874" vertical-offset="0" max-vertical-offset="911">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notesservice.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/notesservice.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -156,11 +153,7 @@
         <option value="$PROJECT_DIR$/app/scripts/directives/aplogindirective.js" />
         <option value="$PROJECT_DIR$/app/templates/directives/register.html" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
-        <option value="$PROJECT_DIR$/app/scripts/services/notesservice.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/notes.js" />
-        <option value="$PROJECT_DIR$/app/views/notes.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
-        <option value="$PROJECT_DIR$/app/templates/navbar.html" />
         <option value="$PROJECT_DIR$/test/spec/controllers/notes.js" />
         <option value="$PROJECT_DIR$/test/spec/directives/apmatchdirective.js" />
         <option value="$PROJECT_DIR$/test/spec/directives/appasswordstrengthdirective.js" />
@@ -175,12 +168,18 @@
         <option value="$PROJECT_DIR$/app/views/logout.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/navbar.js" />
         <option value="$PROJECT_DIR$/app/templates/directives/userinfo.html" />
-        <option value="$PROJECT_DIR$/app/scripts/directives/apuserinfodirective.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/useraccountservice.js" />
         <option value="$PROJECT_DIR$/app/scripts/directives/apsetfocusdirective.js" />
         <option value="$PROJECT_DIR$/app/templates/directives/login.html" />
         <option value="$PROJECT_DIR$/app/scripts/directives/apfocusmedirective.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/app/scripts/directives/apnotedirective.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/notesservice.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/notes.js" />
+        <option value="$PROJECT_DIR$/app/scripts/directives/apuserinfodirective.js" />
+        <option value="$PROJECT_DIR$/app/views/notes.html" />
+        <option value="$PROJECT_DIR$/app/templates/directives/note.html" />
       </list>
     </option>
   </component>
@@ -362,6 +361,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,60 +377,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,49 +554,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngPlay.front.SPA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -690,14 +595,6 @@
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -708,14 +605,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" />
-      <option name="executablePath" />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -723,6 +618,16 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -831,13 +736,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/spec/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="476">
@@ -923,14 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/apregisterdirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/directives/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.615385" vertical-offset="765" max-vertical-offset="1785">
@@ -952,28 +842,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1392" max-vertical-offset="2431">
           <caret line="121" column="23" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/notesservice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/notes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/echo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="680">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1009,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1241">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
           <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2278">
           <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1083,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1598">
           <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1091,15 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="910">
           <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="714">
-          <caret line="30" column="90" selection-start-line="30" selection-start-column="90" selection-end-line="30" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,30 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
           <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/directives/userinfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="323">
-          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/echo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/apuserinfodirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -1163,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,27 +1015,104 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/directives/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="867">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="867">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <marker date="1398585834518" expanded="true" signature="167:332" placeholder="{...}" />
-            <marker date="1398585834518" expanded="true" signature="820:978" placeholder="{...}" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/apregisterdirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="9" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/echo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.692308" vertical-offset="491" max-vertical-offset="1445">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state vertical-scroll-proportion="-30.807692" vertical-offset="491" max-vertical-offset="1462">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="799">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/apnotedirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/notesservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/echo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/directives/userinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="323">
+          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/apuserinfodirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055982437" vertical-offset="0" max-vertical-offset="911">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="527">
+          <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/directives/note.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.111964874" vertical-offset="0" max-vertical-offset="911">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,8 @@
 ﻿using Autofac.Integration.WebApi;
 using DotNetDoodle.Owin;
 using Microsoft.Owin;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Owin;
 using System.Web.Http;
 
@@ -20,8 +22,18 @@ namespace ngPlay.back.WebAPI
             // Configure Web API with the dependency resolver.
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
-
             ConfigureAuth(app);
+
+            ConfigureJsonSerialization();
+        }
+
+        private void ConfigureJsonSerialization()
+        {
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+            var jsonFormatter = formatters.JsonFormatter;
+            var settings = jsonFormatter.SerializerSettings;
+            settings.Formatting = Formatting.Indented;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }
