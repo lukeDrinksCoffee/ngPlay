@@ -1,4 +1,5 @@
 ﻿using ngPlay.back.Data.Contracts;
+using ngPlay.back.Data.Entities;
 using ngPlay.back.Domain.Contracts;
 
 namespace ngPlay.back.Domain.Services
@@ -20,6 +21,11 @@ namespace ngPlay.back.Domain.Services
         public bool IsEmailUnique(string email)
         {
             return _repository.GetByEmail(email) == null;
+        }
+
+        public User GetUser(int id)
+        {
+            return _repository.Get(id);
         }
     }
 }

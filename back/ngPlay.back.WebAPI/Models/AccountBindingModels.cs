@@ -1,18 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 
 namespace ngPlay.back.WebAPI.Models
 {
     // Models used as parameters to AccountController actions.
-
-    public class AddExternalLoginBindingModel
-    {
-        [Required]
-        [Display(Name = "External access token")]
-        public string ExternalAccessToken { get; set; }
-    }
 
     public class ChangePasswordBindingModel
     {
@@ -55,13 +46,6 @@ namespace ngPlay.back.WebAPI.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class RegisterExternalBindingModel
-    {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-    }
-
     public class RemoveLoginBindingModel
     {
         [Required]
@@ -85,5 +69,11 @@ namespace ngPlay.back.WebAPI.Models
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class UserInfoBindingModel
+    {
+        public string UserName { get; set; }
+        public string Email { get; set; }
     }
 }

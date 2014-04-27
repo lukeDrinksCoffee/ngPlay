@@ -7,7 +7,7 @@
             <div class="col-sm-6">
                 <input type="text" class="form-control" id="inputUserName" name="inputUserName"
                        placeholder="User Name" required data-ng-model="userData.userName"
-                       data-ng-disabled="working === true">
+                       data-ng-disabled="working === true" ap-focus-me-directive>
             </div>
         </div>
         <div class="form-group"
@@ -37,7 +37,9 @@
         </div>
     </form>
     <div data-ng-show="isLoggedIn">
-        Logged in!
+        <div class="row">
+            <div class="col-sm-6">Logged in!</div>
+        </div>
         <br />
         <div data-ap-user-info-directive is-logged-in="isLoggedIn"></div>
     </div>

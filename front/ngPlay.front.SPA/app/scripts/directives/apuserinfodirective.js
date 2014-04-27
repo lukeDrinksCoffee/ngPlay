@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ngPlay')
-  .directive('apUserInfoDirective', function () {
+  .directive('apUserInfoDirective', function (UserAccountService) {
     return {
       templateUrl: 'templates/directives/userinfo.html',
       restrict: 'A',
@@ -9,7 +9,7 @@ angular.module('ngPlay')
       scope: {
         isLoggedIn: '='
       },
-      link: function postLink(scope, element, attrs, UserAccountService) {
+      link: function postLink(scope, element, attrs) {
         scope.userInfo = {
           userName: '',
           email: ''
@@ -18,12 +18,16 @@ angular.module('ngPlay')
         scope.$watch('isLoggedIn', function(newValue, oldValue) {
           if (newValue) {
 
-            // TODO LEO fetch user info from backend
+            UserAccountService.getUserInfo()
+              .then(function(data) {
+                scope.userInfo.userName = data.UserName;
+                scope.userInfo.email = data.Email;
 
-            scope.userInfo.userName = 'temp user name';
-            scope.userInfo.email = 'temp email';
+              }, function() {
+
+              });
           }
-        }); // TODO LEO  will it work without true here
+        });
       }
     };
   });

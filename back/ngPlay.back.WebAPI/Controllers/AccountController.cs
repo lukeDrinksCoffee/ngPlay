@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
@@ -160,6 +161,28 @@ namespace ngPlay.back.WebAPI.Controllers
             }
 
             return Ok();
+        }
+
+        // TODO LEO make async ?
+        // POST api/Account/UserInfo
+        [Route("UserInfo")]
+        public UserInfoBindingModel UserInfo()
+        {
+            int id;
+            Int32.TryParse(User.Identity.GetUserId(), out id);
+
+            var user = _userService.GetUser(id);
+
+            if (user == null)
+                return null;
+
+            var userBm = new UserInfoBindingModel
+            {
+                UserName = user.UserName,
+                Email = user.Email
+            };
+
+            return userBm;
         }
 
         protected override void Dispose(bool disposing)

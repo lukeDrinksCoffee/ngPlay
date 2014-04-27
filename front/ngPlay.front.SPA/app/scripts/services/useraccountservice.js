@@ -57,6 +57,23 @@ angular.module('ngPlay')
         return deferred.promise;
       },
 
+      getUserInfo : function() {
+        var infoUrl = AppSettings.webApiUrl + '/Account/UserInfo';
+
+        var deferred = $q.defer();
+
+        $http.post(infoUrl)
+          .success(function(data) {
+            deferred.resolve(data);
+          })
+          .error(function(err) {
+            console.log(err);
+            deferred.reject();
+          });
+
+        return deferred.promise;
+      },
+
       logoutUser : function() {
         var logoutUrl = AppSettings.webApiUrl + '/Account/Logout';
 
