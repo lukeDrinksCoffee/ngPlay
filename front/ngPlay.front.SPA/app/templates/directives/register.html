@@ -1,0 +1,100 @@
+<div>
+
+    <form name="registerForm" novalidate class="form-horizontal" role="form" data-ng-hide="registerVm.isRegistered">
+        <div class="form-group"
+             data-ng-class="{ 'has-error has-feedback' : registerForm.inputUserName.$error.required
+                                                             && registerForm.inputUserName.$dirty }">
+            <label for="inputUserName" class="col-sm-3 control-label">User Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputUserName" name="inputUserName"
+                       placeholder="User Name" required data-ng-model="registerVm.userData.name"
+                       data-ng-disabled="registerVm.working === true">
+            </div>
+        </div>
+        <div class="form-group"
+             data-ng-class="{ 'has-error has-feedback' : registerForm.inputEmail.$invalid
+                                                             && registerForm.inputEmail.$dirty }">
+            <label for="inputEmail" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email"
+                       required data-ng-model="registerVm.userData.email"
+                       data-ng-disabled="registerVm.working === true">
+            </div>
+        </div>
+        <div class="form-group"
+             data-ng-class="{ 'has-error has-feedback' : registerForm.inputPassword.$invalid
+                                                             && registerForm.inputPassword.$dirty }">
+            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+                       placeholder="Password" required data-ng-model="registerVm.userData.password"
+                       data-ap-password-strength-directive data-ng-disabled="registerVm.working === true">
+            </div>
+        </div>
+        <div class="form-group"
+             data-ng-class="{ 'has-error has-feedback' : registerForm.inputConfirmPassword.$invalid
+                                                             && registerForm.inputConfirmPassword.$dirty }">
+            <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputConfirmPassword" name="inputConfirmPassword"
+                       placeholder="Password" required data-ng-model="registerVm.userData.confirmPassword"
+                       data-ap-match-directive data-match-to="registerVm.userData.password"
+                       data-ng-disabled="registerVm.working === true">
+            </div>
+        </div>
+        <div class="col-sm-offset-3 col-sm-8"
+             data-ng-show="(registerForm.inputUserName.$error.required && registerForm.inputUserName.$dirty)
+                            || (registerForm.inputEmail.$invalid && registerForm.inputEmail.$dirty)
+                            || (registerForm.inputPassword.$invalid && registerForm.inputPassword.$dirty)
+                            || (registerForm.inputConfirmPassword.$invalid && registerForm.inputConfirmPassword.$dirty)">
+            <div class="input-feedback">
+                <span>Please fix the following:</span>
+                <ul>
+                    <li data-ng-show="registerForm.inputUserName.$error.required && registerForm.inputUserName.$dirty">
+                        User Name is required
+                    </li>
+                    <li data-ng-show="registerForm.inputEmail.$invalid && registerForm.inputEmail.$dirty">
+                        A valid email address is required
+                    </li>
+                    <li data-ng-show="registerForm.inputPassword.$invalid && registerForm.inputPassword.$dirty">
+                        Password doesn't meet complexity requirements; it must:
+                        <ul>
+                            <li>Contain a capital</li>
+                            <li>Contain a number</li>
+                            <li>Contain a special character</li>
+                            <li>Be at least 6 characters long</li>
+                        </ul>
+                    </li>
+                    <li data-ng-show="registerForm.inputConfirmPassword.$invalid
+                                          && registerForm.inputConfirmPassword.$dirty">
+                        Passwords don't match
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-8">
+                <button type="submit" class="btn btn-default"
+                        data-ng-disabled="registerForm.$invalid || registerVm.working === true"
+                        data-ng-click="registerForm.$valid && registerVm.registerUser()">Register</button>
+                <!-- TODO LEO Replace with spinner -->
+                <span style="margin-left: 20px;" data-ng-show="registerVm.working">Working...</span>
+            </div>
+        </div>
+    </form>
+
+    <div data-ng-show="registerVm.isRegistered">
+        <h3>Registered!</h3>
+        Thanks for registering. Please <a href="#/login">login</a> to continue.
+    </div>
+
+    <div data-ng-show="registerVm.errorOccurred">
+        <div class="input-feedback">
+            ERROR!
+            <pre>{{ registerVm.errorInfo | json }}</pre>
+        </div>
+    </div>
+
+
+</div>

@@ -26,9 +26,6 @@ namespace ngPlay.back.WebAPI.Controllers
                 Detail = "Ping received"
             });
 
-            // TODO LEO further investigate / generalise
-            HttpContext.Current.Response.AppendHeader("Access-Control-Allow-Origin", "*");
-
             return new
             {
                 echo = String.Format("{0} : {1}", value, now)

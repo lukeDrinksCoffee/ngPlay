@@ -1,0 +1,46 @@
+<div>
+    <form name="loginForm" novalidate class="form-horizontal" role="form" data-ng-hide="isLoggedIn">
+        <div class="form-group"
+             data-ng-class="{ 'has-error has-feedback' : loginForm.inputUserName.$error.required
+                                                             && loginForm.inputUserName.$dirty }">
+            <label for="inputUserName" class="col-sm-3 control-label">User Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputUserName" name="inputUserName"
+                       placeholder="User Name" required data-ng-model="userData.userName"
+                       data-ng-disabled="working === true" ap-focus-me-directive>
+            </div>
+        </div>
+        <div class="form-group"
+             data-ng-class="{ 'has-error has-feedback' : loginForm.inputPassword.$invalid
+                                                             && loginForm.inputPassword.$dirty }">
+            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+                       placeholder="Password" required data-ng-model="userData.password"
+                       data-ap-password-strength-directive data-ng-disabled="working === true">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-2">
+                <button type="submit" class="btn btn-default"
+                        data-ng-disabled="loginForm.$invalid || working === true"
+                        data-ng-click="loginForm.$valid && loginUser()">
+                    Login
+                </button>
+            </div>
+            <div class="col-sm-4 align-with-button" data-ng-show="working"><!-- TODO LEO Replace with spinner -->
+                Working...
+            </div>
+            <div class="col-sm-4 align-with-button err-text" data-ng-show="loginFailed">
+                Login attempt failed...
+            </div>
+        </div>
+    </form>
+    <div data-ng-show="isLoggedIn">
+        <div class="row">
+            <div class="col-sm-6">Logged in!</div>
+        </div>
+        <br />
+        <div data-ap-user-info-directive is-logged-in="isLoggedIn"></div>
+    </div>
+</div>

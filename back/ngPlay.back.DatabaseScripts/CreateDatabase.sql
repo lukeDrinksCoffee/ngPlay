@@ -8,6 +8,9 @@
 USE [master]
 GO
 
+DROP DATABASE [ngPlay]
+GO
+
 /****** Object:  Database [ngPlay]    Script Date: 11/04/2014 5:48:41 PM ******/
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'ngPlay')
 BEGIN
@@ -148,4 +151,33 @@ END
 GO
 
 
+CREATE TABLE [dbo].[User] (
+    [UserId]               INT            IDENTITY (1000, 1) NOT NULL,
+    [Email]                NVARCHAR (256) NOT NULL,
+    [EmailConfirmed]       BIT            NOT NULL DEFAULT(0),
+    [PasswordHash]         NVARCHAR (MAX) NULL,
+    [SecurityStamp]        NVARCHAR (MAX) NULL,
+    [PhoneNumber]          NVARCHAR (MAX) NULL,
+    [PhoneNumberConfirmed] BIT            NOT NULL DEFAULT(0),
+    [TwoFactorEnabled]     BIT            NOT NULL DEFAULT(0),
+    [LockoutEndDateUtc]    DATETIME       NULL,
+    [LockoutEnabled]       BIT            NOT NULL DEFAULT(0),
+    [AccessFailedCount]    INT            NOT NULL DEFAULT(0),
+    [UserName]             NVARCHAR (256) NOT NULL
+);
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND name = N'U_UserName')
+CREATE UNIQUE NONCLUSTERED INDEX [U_UserName] ON [dbo].[User]
+(
+	[UserName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND name = N'U_Email')
+CREATE UNIQUE NONCLUSTERED INDEX [U_Email] ON [dbo].[User]
+(
+	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
 

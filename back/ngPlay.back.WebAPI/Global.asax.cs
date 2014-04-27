@@ -9,8 +9,6 @@ namespace ngPlay.back.WebAPI
     {
         protected void Application_Start()
         {
-            IoCConfig.RegisterDependencies();
-
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

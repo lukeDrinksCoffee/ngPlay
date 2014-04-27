@@ -114,3 +114,24 @@ textarea.input-smlr {
     border-color: red;
     background-color: rgb(255, 227, 223);
 }
+
+div .input-feedback {
+    border-color: #a94442;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    min-width: 300px;
+}
+
+.align-with-button {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 6px;
+}
+
+.err-text {
+    color: #a94442;
+    font-weight: bold;
+}

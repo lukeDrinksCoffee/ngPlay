@@ -7,12 +7,6 @@ describe('Controller: EchoController', function () {
 
   var succeedPromise, echoCtrl, scope, echoSvc;
 
-  var mockEchoService = {
-    pingServer : function(value) {
-
-    }
-  };
-
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $q, EchoService) {
     scope = $rootScope.$new();
