@@ -5,6 +5,7 @@ namespace ngPlay.back.Domain.Contracts
 {
     public interface INoteService
     {
-        IEnumerable<Note> GetNotesForUser(int userId);
+        ServiceResponse GetNotesForUser(int userId, out IEnumerable<Note> notes);
+        ServiceResponse DeleteNote(int noteId, int userId);
     }
 }

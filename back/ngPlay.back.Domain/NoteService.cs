@@ -14,9 +14,26 @@ namespace ngPlay.back.Domain
             _noteRepository = noteRepository;
         }
 
-        public IEnumerable<Note> GetNotesForUser(int userId)
+        public ServiceResponse GetNotesForUser(int userId, out IEnumerable<Note> notes)
         {
-            return _noteRepository.GetNotesForUser(userId);
+            notes = _noteRepository.GetNotesForUser(userId);
+
+            return ServiceResponse.Ok;
+        }
+
+        ServiceResponse INoteService.DeleteNote(int noteId, int userId)
+        {
+            var note = _noteRepository.Get(noteId);
+
+            if (note == null)
+                return ServiceResponse.NotFound;
+
+            if (note.UserId != userId)
+                return ServiceResponse.NotAuthorised;
+
+            _noteRepository.Delete(noteId);
+
+            return ServiceResponse.Ok;
         }
     }
 }

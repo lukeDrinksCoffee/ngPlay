@@ -42,6 +42,7 @@
     <Compile Include="Contracts\IAppLogService.cs" />
     <Compile Include="Contracts\INoteService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="Contracts\ServiceResponse.cs" />
     <Compile Include="Entities\AppLogEntry.cs" />
     <Compile Include="NoteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

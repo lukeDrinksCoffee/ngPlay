@@ -23,6 +23,10 @@ angular.module('ngPlay')
       )
     };
 
+    $scope.deleteNote = function(noteId) {
+      return NotesService.deleteNote(noteId);
+    }
+
     $scope.init();
 
   });

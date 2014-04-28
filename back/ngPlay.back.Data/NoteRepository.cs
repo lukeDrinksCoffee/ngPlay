@@ -13,9 +13,19 @@ namespace ngPlay.back.Data
             _dataContext = dataContext;
         }
 
+        public Note Get(int id)
+        {
+            return _dataContext.SingleOrDefault<Note>(id);
+        }
+
         public IEnumerable<Note> GetNotesForUser(int userId)
         {
             return _dataContext.Query<Note>("SELECT * FROM [Note] WHERE UserId = @0", userId);
+        }
+
+        public void Delete(int id)
+        {
+            _dataContext.Delete<Note>(id);
         }
     }
 }

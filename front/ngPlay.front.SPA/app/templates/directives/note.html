@@ -1,7 +1,8 @@
-<div class="panel panel-info">
+<div data-ng-hide="deleted" class="panel panel-info">
     <div class="panel-heading">{{ note.title }}</div>
     <div class="panel-body">{{ note.content }}</div>
     <div class="panel-footer">
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger" data-ng-disabled="working"
+                data-ng-click="deleteNote()">Delete</button>
     </div>
 </div>

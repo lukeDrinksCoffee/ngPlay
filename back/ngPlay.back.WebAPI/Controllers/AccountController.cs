@@ -13,7 +13,7 @@ namespace ngPlay.back.WebAPI.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountController : ApiControllerBase
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
@@ -168,10 +168,7 @@ namespace ngPlay.back.WebAPI.Controllers
         [Route("UserInfo")]
         public UserInfoBindingModel UserInfo()
         {
-            int id;
-            Int32.TryParse(User.Identity.GetUserId(), out id);
-
-            var user = _userService.GetUser(id);
+            var user = _userService.GetUser(GetUserId());
 
             if (user == null)
                 return null;

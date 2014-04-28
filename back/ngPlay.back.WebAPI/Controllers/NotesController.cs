@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using ngPlay.back.Data.Entities;
+using ngPlay.back.Domain.Contracts;
+using ngPlay.back.WebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using Microsoft.AspNet.Identity;
-using ngPlay.back.Domain.Contracts;
-using ngPlay.back.WebAPI.Models;
 
 namespace ngPlay.back.WebAPI.Controllers
 {
     [Authorize]
-    public class NotesController : ApiController
+    public class NotesController : ApiControllerBase
     {
         private readonly INoteService _noteService;
 
@@ -24,15 +25,25 @@ namespace ngPlay.back.WebAPI.Controllers
             int id;
             Int32.TryParse(User.Identity.GetUserId(), out id);
 
-            var notes = _noteService.GetNotesForUser(id);
+            IEnumerable<Note> notes;
+            var response = _noteService.GetNotesForUser(id, out notes);
+
+            ThrowIfNotOk(response);
 
             return notes.Select(n => new NoteBindingModel
                                      {
-                                         NoteId = n.NoteId,
+                                         Id = n.Id,
                                          Title = n.Title,
                                          Content = n.Content
                                      })
                         .ToList();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var response = _noteService.DeleteNote(id, GetUserId());
+
+            return CheckServiceResponse(response);
         }
     }
 }
