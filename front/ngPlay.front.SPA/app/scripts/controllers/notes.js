@@ -3,9 +3,9 @@
 angular.module('ngPlay')
   .controller('NotesController', function ($scope, NotesService) {
     $scope.notes = [
-      // { title: 'Note 1', content: 'some content'},
-      // { title: 'Note 2', content: 'some more content'},
-      // { title: 'Note 3', content: 'some other content'},
+//      { id: 1, title: 'Note 1', content: 'some content'},
+//      { id: 2, title: 'Note 2', content: 'some more content'},
+//      { id: 3, title: 'Note 3', content: 'some other content'},
     ];
 
     $scope.error = false;
@@ -23,8 +23,11 @@ angular.module('ngPlay')
       )
     };
 
-    $scope.deleteNote = function(noteId) {
-      return NotesService.deleteNote(noteId);
+    $scope.deleteNote = function(note) {
+      NotesService.deleteNote(note.id).then(function() {
+        var i = $scope.notes.indexOf(note);
+        $scope.notes.splice(i, 1);  //removes 1 element at position i
+      });
     }
 
     $scope.init();
