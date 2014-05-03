@@ -3,17 +3,16 @@ using ngPlay.back.WebAPI.Controllers;
 using NUnit.Framework;
 using System.IO;
 using System.Web;
-
-///////////////////////////////////////////////////////
-//
-// Test naming convention
-//
-//    UnitOfWork_StateUnderTest_ExpectedOutcome
-//
 using Rhino.Mocks;
 
 namespace ngPlay.back.WebAPI.Tests.Controllers
 {
+    ///////////////////////////////////////////////////////
+    // Test naming convention
+    //
+    //    UnitOfWork_StateUnderTest_ExpectedOutcome
+    //
+
     [TestFixture]
     public class EchoControllerTest
     {

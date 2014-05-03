@@ -23,6 +23,16 @@ namespace ngPlay.back.Data
             return _dataContext.Query<Note>("SELECT * FROM [Note] WHERE UserId = @0", userId);
         }
 
+        public void Create(Note note)
+        {
+            _dataContext.Insert(note);
+        }
+
+        public void Update(Note note)
+        {
+            _dataContext.Update(note);
+        }
+
         public void Delete(int id)
         {
             _dataContext.Delete<Note>(id);

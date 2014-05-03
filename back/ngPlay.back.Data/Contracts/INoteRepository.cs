@@ -7,6 +7,8 @@ namespace ngPlay.back.Data.Contracts
     {
         Note Get(int id);
         IEnumerable<Note> GetNotesForUser(int userId);
+        void Create(Note note);
+        void Update(Note note);
         void Delete(int id);
     }
 }
