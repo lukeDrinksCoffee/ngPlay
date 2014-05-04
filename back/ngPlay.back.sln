@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngPlay.back.DatabaseScripts
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngPlay.back.Identity", "ngPlay.back.Identity\ngPlay.back.Identity.csproj", "{A3ECC6BB-406B-4FCD-9452-A273A51B32A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngPlay.back.Domain.Tests", "Test\ngPlay.back.Domain.Tests\ngPlay.back.Domain.Tests.csproj", "{E297D1E3-F921-4C00-A81F-0F0BC2B6ED89}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4496CE07-76D1-4A57-A702-6E2AF845213D} = {4496CE07-76D1-4A57-A702-6E2AF845213D}
+		{E576AD6F-4436-4803-8BD9-4F52ECFF3B03} = {E576AD6F-4436-4803-8BD9-4F52ECFF3B03}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,11 +51,16 @@ Global
 		{A3ECC6BB-406B-4FCD-9452-A273A51B32A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3ECC6BB-406B-4FCD-9452-A273A51B32A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3ECC6BB-406B-4FCD-9452-A273A51B32A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E297D1E3-F921-4C00-A81F-0F0BC2B6ED89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E297D1E3-F921-4C00-A81F-0F0BC2B6ED89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E297D1E3-F921-4C00-A81F-0F0BC2B6ED89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E297D1E3-F921-4C00-A81F-0F0BC2B6ED89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB1EFB48-0B5F-434C-B128-23D724AA40C8} = {7B96A5B4-DCE5-43C5-9815-BFCF3D8218EE}
+		{E297D1E3-F921-4C00-A81F-0F0BC2B6ED89} = {7B96A5B4-DCE5-43C5-9815-BFCF3D8218EE}
 	EndGlobalSection
 EndGlobal

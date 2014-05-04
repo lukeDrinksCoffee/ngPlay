@@ -1,6 +1,33 @@
-<p>This is the Notes view.</p>
+<div class="glyph-heading">
+    <span class="glyphicon glyphicon-list glyphicons-heading"></span>
+    <h1>Notes</h1>
+</div>
+
+<div data-ng-controller="CreateNoteModalController">
+    <a data-ng-click="open()" href="">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create new note
+    </a>
+</div>
 
 <div ng-controller="NotesController">
-    <button data-ng-click="getNotes()">Get Notes</button>
-    <div>{{ notes }}</div>
+    <div data-ng-switch="notesLoaded || error" class="col-md-offset-2 col-md-8">
+        <div data-ng-switch-when="false" class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Notes loading...
+        </div>
+    </div>
+
+    <div data-ng-switch="error" class="col-md-offset-2 col-md-8">
+        <div data-ng-switch-when="true" class="alert alert-danger">
+            <strong>Error</strong> while loading notes!
+        </div>
+    </div>
+
+    <div data-ng-show="notesLoaded">
+        <ul data-ng-repeat="note in notes | orderBy: '-id'" class="col-md-offset-2 col-md-8 note-item">
+            <div data-ap-note-directive data-note="note" data-controller-delete-note="deleteNote(note)"
+                 data-controller-update-note="updateNote(noteToUpdate)"></div>
+        </ul>
+    </div>
 </div>

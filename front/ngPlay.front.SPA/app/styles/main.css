@@ -135,3 +135,21 @@ div .input-feedback {
     color: #a94442;
     font-weight: bold;
 }
+
+.edit-note {
+    float: right;
+}
+
+.note-footer {
+    min-height: 55px;
+    position: relative;
+}
+
+.note-right-align-btn {
+    float: right;
+}
+
+.note-footer-center-info {
+    position: absolute;
+    margin: 5px 0px 0px 40%;
+}

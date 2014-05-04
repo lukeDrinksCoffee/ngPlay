@@ -1,0 +1,27 @@
+
+.note-item.ng-enter,
+.note-item.ng-leave,
+.note-item.ng-move {
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+.note-item.ng-leave {
+    opacity: 1;
+    overflow: hidden;
+}
+
+.note-item.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.note-item.ng-enter {
+    opacity: 0;
+    overflow: hidden;
+}
+
+.note-item.ng-enter.ng-enter-active {
+    opacity: 1;
+}

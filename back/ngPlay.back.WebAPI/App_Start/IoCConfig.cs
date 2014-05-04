@@ -3,6 +3,7 @@ using Autofac.Integration.WebApi;
 using DotNetDoodle.Owin.Dependencies.Autofac;
 using ngPlay.back.Data;
 using ngPlay.back.Data.Contracts;
+using ngPlay.back.Domain;
 using ngPlay.back.Domain.Contracts;
 using ngPlay.back.Domain.Services;
 using System.Reflection;
@@ -32,6 +33,9 @@ namespace ngPlay.back.WebAPI
 
                 builder.RegisterType<UserRepository>().As<IUserRepository>();
                 builder.RegisterType<UserService>().As<IUserService>().InstancePerApiRequest();
+
+                builder.RegisterType<NoteRepository>().As<INoteRepository>().InstancePerApiRequest();
+                builder.RegisterType<NoteService>().As<INoteService>().InstancePerApiRequest();
 
                 _container = builder.Build();
             }

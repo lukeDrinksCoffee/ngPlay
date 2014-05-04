@@ -38,10 +38,10 @@ namespace ngPlay.back.Identity
         static IdentityUser()
         {
             Mapper.CreateMap<User, IdentityUser>().
-                ForMember(iu => iu.Id, m => m.MapFrom(u => u.UserID.ToString()));
+                ForMember(iu => iu.Id, m => m.MapFrom(u => u.UserId.ToString()));
 
             Mapper.CreateMap<IdentityUser, User>().
-                ForMember(u => u.UserID, m => m.MapFrom(iu => Convert.ToInt32(iu.Id)));
+                ForMember(u => u.UserId, m => m.MapFrom(iu => Convert.ToInt32(iu.Id)));
         }
     }
 }

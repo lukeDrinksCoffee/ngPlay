@@ -5,7 +5,9 @@ angular.
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate',
+    'ui.bootstrap'
   ]).
   constant('AppSettings', {
     baseUrl: 'http://localhost:51995',

@@ -20,8 +20,8 @@ angular.module('ngPlay')
 
             UserAccountService.getUserInfo()
               .then(function(data) {
-                scope.userInfo.userName = data.UserName;
-                scope.userInfo.email = data.Email;
+                scope.userInfo.userName = data.userName;
+                scope.userInfo.email = data.email;
 
               }, function() {
 

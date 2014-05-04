@@ -4,180 +4,118 @@
 --
 ----------------------------------------------------------------------
 
-
 USE [master]
-GO
 
-DROP DATABASE [ngPlay]
-GO
-
-/****** Object:  Database [ngPlay]    Script Date: 11/04/2014 5:48:41 PM ******/
-IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'ngPlay')
+IF EXISTS (SELECT name FROM sys.databases WHERE name = N'ngPlay')
 BEGIN
-CREATE DATABASE [ngPlay]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'ngPlay', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\ngPlay.mdf' , SIZE = 5120KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
- LOG ON 
-( NAME = N'ngPlay_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\ngPlay_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+	DROP DATABASE [ngPlay]
 END
-
 GO
 
-ALTER DATABASE [ngPlay] SET COMPATIBILITY_LEVEL = 110
+CREATE DATABASE [ngPlay]
 GO
-
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [ngPlay].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-
-ALTER DATABASE [ngPlay] SET ANSI_NULL_DEFAULT OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET ANSI_NULLS OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET ANSI_PADDING OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET ANSI_WARNINGS OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET ARITHABORT OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET AUTO_CLOSE OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET AUTO_CREATE_STATISTICS ON 
-GO
-
-ALTER DATABASE [ngPlay] SET AUTO_SHRINK OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET AUTO_UPDATE_STATISTICS ON 
-GO
-
-ALTER DATABASE [ngPlay] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET CURSOR_DEFAULT  GLOBAL 
-GO
-
-ALTER DATABASE [ngPlay] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET NUMERIC_ROUNDABORT OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET QUOTED_IDENTIFIER OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET RECURSIVE_TRIGGERS OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET  DISABLE_BROKER 
-GO
-
-ALTER DATABASE [ngPlay] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET TRUSTWORTHY OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET PARAMETERIZATION SIMPLE 
-GO
-
-ALTER DATABASE [ngPlay] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET HONOR_BROKER_PRIORITY OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET RECOVERY FULL 
-GO
-
-ALTER DATABASE [ngPlay] SET  MULTI_USER 
-GO
-
-ALTER DATABASE [ngPlay] SET PAGE_VERIFY CHECKSUM  
-GO
-
-ALTER DATABASE [ngPlay] SET DB_CHAINING OFF 
-GO
-
-ALTER DATABASE [ngPlay] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-
-ALTER DATABASE [ngPlay] SET TARGET_RECOVERY_TIME = 0 SECONDS 
-GO
-
-ALTER DATABASE [ngPlay] SET  READ_WRITE 
-GO
-
-
-----------------------------------------------------------------------
---
--- Create Tables
---
-----------------------------------------------------------------------
 
 USE [ngPlay]
-GO
 
-/****** Object:  Table [dbo].[AppLog]    Script Date: 11/04/2014 5:54:41 PM ******/
+GO
+/****** Object:  Table [dbo].[AppLog]    Script Date: 27/04/2014 8:26:01 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[AppLog]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[AppLog](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TimeStamp] [datetime] NOT NULL,
-	[Detail] [nvarchar](200) NOT NULL
+	[Detail] [nvarchar](200) NOT NULL,
+ CONSTRAINT [PK_AppLog] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 END
 GO
-
-
-CREATE TABLE [dbo].[User] (
-    [UserId]               INT            IDENTITY (1000, 1) NOT NULL,
-    [Email]                NVARCHAR (256) NOT NULL,
-    [EmailConfirmed]       BIT            NOT NULL DEFAULT(0),
-    [PasswordHash]         NVARCHAR (MAX) NULL,
-    [SecurityStamp]        NVARCHAR (MAX) NULL,
-    [PhoneNumber]          NVARCHAR (MAX) NULL,
-    [PhoneNumberConfirmed] BIT            NOT NULL DEFAULT(0),
-    [TwoFactorEnabled]     BIT            NOT NULL DEFAULT(0),
-    [LockoutEndDateUtc]    DATETIME       NULL,
-    [LockoutEnabled]       BIT            NOT NULL DEFAULT(0),
-    [AccessFailedCount]    INT            NOT NULL DEFAULT(0),
-    [UserName]             NVARCHAR (256) NOT NULL
-);
+/****** Object:  Table [dbo].[Note]    Script Date: 27/04/2014 8:26:01 PM ******/
+SET ANSI_NULLS ON
 GO
-
-IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND name = N'U_UserName')
-CREATE UNIQUE NONCLUSTERED INDEX [U_UserName] ON [dbo].[User]
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Note]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Note](
+	[Id] [int] IDENTITY(1000,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Title] [nvarchar](200) NOT NULL,
+	[Content] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Note] PRIMARY KEY CLUSTERED 
 (
-	[UserName] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
 GO
-
-IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND name = N'U_Email')
-CREATE UNIQUE NONCLUSTERED INDEX [U_Email] ON [dbo].[User]
+/****** Object:  Table [dbo].[User]    Script Date: 27/04/2014 8:26:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[User](
+	[UserId] [int] IDENTITY(1000,1) NOT NULL,
+	[Email] [nvarchar](256) NOT NULL,
+	[EmailConfirmed] [bit] NOT NULL,
+	[PasswordHash] [nvarchar](max) NULL,
+	[SecurityStamp] [nvarchar](max) NULL,
+	[PhoneNumber] [nvarchar](max) NULL,
+	[PhoneNumberConfirmed] [bit] NOT NULL,
+	[TwoFactorEnabled] [bit] NOT NULL,
+	[LockoutEndDateUtc] [datetime] NULL,
+	[LockoutEnabled] [bit] NOT NULL,
+	[AccessFailedCount] [int] NOT NULL,
+	[UserName] [nvarchar](256) NOT NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
 (
-	[Email] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
 GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__User__EmailConfi__108B795B]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [EmailConfirmed]
+END
 
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__User__PhoneNumbe__117F9D94]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [PhoneNumberConfirmed]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__User__TwoFactorE__1273C1CD]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [TwoFactorEnabled]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__User__LockoutEna__1367E606]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [LockoutEnabled]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__User__AccessFail__145C0A3F]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [AccessFailedCount]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Note_User]') AND parent_object_id = OBJECT_ID(N'[dbo].[Note]'))
+ALTER TABLE [dbo].[Note]  WITH CHECK ADD  CONSTRAINT [FK_Note_User] FOREIGN KEY([UserId])
+REFERENCES [dbo].[User] ([UserId])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Note_User]') AND parent_object_id = OBJECT_ID(N'[dbo].[Note]'))
+ALTER TABLE [dbo].[Note] CHECK CONSTRAINT [FK_Note_User]
+GO
