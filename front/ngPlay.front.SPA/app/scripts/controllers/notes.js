@@ -1,12 +1,8 @@
 'use strict';
 
 angular.module('ngPlay')
-  .controller('NotesController', function ($scope, NotesService) {
-    $scope.notes = [
-//      { id: 1, title: 'Note 1', content: 'some content'},
-//      { id: 2, title: 'Note 2', content: 'some more content'},
-//      { id: 3, title: 'Note 3', content: 'some other content'},
-    ];
+  .controller('NotesController', function ($scope, $q, NotesService) {
+    $scope.notes = [ ];
 
     $scope.error = false;
     $scope.notesLoaded = false;
@@ -20,7 +16,41 @@ angular.module('ngPlay')
         function() {
           $scope.error = true;
         }
+      );
+
+      NotesService.subscribeNoteAdded(function (newNote) {
+        $scope.notes.push(newNote);
+      });
+    };
+
+    $scope.createNote = function(note) {
+      NotesService.createNote(note).then(function(createdNote) {
+        $scope.notes.push(createdNote)
+      });
+    };
+
+    $scope.updateNote = function(note) {
+      var deferred = $q.defer();
+
+      NotesService.updateNote(note).then(
+        function() {
+          // Replace note old -> new
+          var i;
+          for(i=0; i< $scope.notes.length; i++) {
+            if ($scope.notes[i].id === note.id) {
+              $scope.notes[i].title = note.title;
+              $scope.notes[i].content = note.content;
+            }
+          }
+
+          deferred.resolve();
+        },
+        function() {
+          deferred.reject();
+        }
       )
+
+      return deferred.promise;
     };
 
     $scope.deleteNote = function(note) {

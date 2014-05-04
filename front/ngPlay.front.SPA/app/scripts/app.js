@@ -6,7 +6,8 @@ angular.
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.bootstrap'
   ]).
   constant('AppSettings', {
     baseUrl: 'http://localhost:51995',

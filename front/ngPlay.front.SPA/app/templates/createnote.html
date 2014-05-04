@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3 class="modal-title">Create a new note</h3>
+</div>
+<div class="modal-body" style="position: relative">
+    <div class="form-group">
+        <label for="inputNoteTitle">Title</label>
+        <input type="text" class="form-control" id="inputNoteTitle" placeholder="title" data-ng-model="note.title"
+               data-ng-disabled="working">
+    </div>
+    <div class="form-group">
+        <label for="inputNoteContent">Content</label>
+        <textarea id="inputNoteContent" class="form-control" rows="6" placeholder="type note here..."
+                  data-ng-model="note.content" data-ng-disabled="working"></textarea>
+    </div>
+    <div data-ng-show="working" style="position: absolute">Working...</div>
+    <div class="alert alert-danger" data-ng-show="createFailed">Error occurred while trying to create note</div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="createNote()" data-ng-disabled="working">Create</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

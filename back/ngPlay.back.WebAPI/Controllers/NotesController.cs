@@ -1,4 +1,7 @@
-﻿using ngPlay.back.Data.Entities;
+﻿using System.IO;
+using System.Net;
+using System.Web;
+using ngPlay.back.Data.Entities;
 using ngPlay.back.Domain.Contracts;
 using ngPlay.back.WebAPI.Models;
 using System.Collections.Generic;
@@ -50,6 +53,9 @@ namespace ngPlay.back.WebAPI.Controllers
         /// <returns></returns>
         public NoteBindingModel Post(NoteBindingModel note)
         {
+            if (note == null)
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+
             Note newNote;
             var response = _noteService.CreateNote(GetUserId(), note.Title, note.Content, out newNote);
 
@@ -67,6 +73,9 @@ namespace ngPlay.back.WebAPI.Controllers
         /// <returns></returns>
         public IHttpActionResult Put(NoteBindingModel note)
         {
+            if (note == null)
+                return BadRequest();
+
             var response = _noteService.UpdateNote(GetUserId(), note.ToNote());
 
             return CheckServiceResponse(response);

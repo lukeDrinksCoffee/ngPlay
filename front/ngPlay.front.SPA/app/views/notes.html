@@ -3,6 +3,13 @@
     <h1>Notes</h1>
 </div>
 
+<div data-ng-controller="CreateNoteModalController">
+    <a data-ng-click="open()" href="">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create new note
+    </a>
+</div>
+
 <div ng-controller="NotesController">
     <div data-ng-switch="notesLoaded || error" class="col-md-offset-2 col-md-8">
         <div data-ng-switch-when="false" class="alert alert-warning alert-dismissable">
@@ -18,8 +25,9 @@
     </div>
 
     <div data-ng-show="notesLoaded">
-        <ul data-ng-repeat="note in notes" class="col-md-offset-2 col-md-8 note-item">
-            <div data-ap-note-directive data-note="note" data-controller-delete-note="deleteNote(note)"></div>
+        <ul data-ng-repeat="note in notes | orderBy: '-id'" class="col-md-offset-2 col-md-8 note-item">
+            <div data-ap-note-directive data-note="note" data-controller-delete-note="deleteNote(note)"
+                 data-controller-update-note="updateNote(noteToUpdate)"></div>
         </ul>
     </div>
 </div>
