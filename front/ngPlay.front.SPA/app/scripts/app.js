@@ -10,8 +10,10 @@ angular.
     'ui.bootstrap'
   ]).
   constant('AppSettings', {
-    baseUrl: 'http://localhost:51995',
-    webApiUrl: 'http://localhost:51995/api'
+    //baseUrl: 'http://localhost:51995',
+    baseUrl: 'http://ngplay-webapi.azurewebsites.net/',
+    //webApiUrl: 'http://localhost:51995/api'
+    webApiUrl: 'http://ngplay-webapi.azurewebsites.net/api'
   }).
   config(function ($routeProvider) {
     $routeProvider
@@ -35,6 +37,9 @@ angular.
       })
       .when('/logout', {
         templateUrl: 'views/logout.html'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html'
       })
       .otherwise({
         redirectTo: '/'

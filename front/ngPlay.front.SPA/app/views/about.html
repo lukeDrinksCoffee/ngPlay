@@ -1,0 +1,59 @@
+<div class="glyph-heading">
+    <span class="glyphicon glyphicon-question-sign glyphicons-heading"></span>
+    <h1>About</h1>
+</div>
+
+<div>
+    <i>A little experiment by Luke O’Reilly</i>
+
+    <h3>Technology Highlights</h3>
+    <ul>
+        <li>
+            Front
+            <ul>
+                <li>Yeoman</li>
+                <li>AngularJS</li>
+                <li>Bootstrap</li>
+            </ul>
+        </li>
+        <li>
+            Back
+            <ul>
+                <li>ASP.NET WebAPI 2</li>
+                <li>Autofac DI</li>
+                <li>PetaPoco micro-ORM</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Hosting</h3>
+    This project is hosted on 3 Azure nodes
+    <ul>
+        <li>Azure SQL (ngPlay-data)</li>
+        <li>Azure Website (ngPlay-webapi)</li>
+        <li>Azure Website (ngPlay-spa)</li>
+    </ul>
+
+    <h3>Features</h3>
+    <h4>Echo</h4>
+    <p>
+        This was the first feature built and allowed for the creation of a thin vertical slice through all
+        major layers.
+    </p>
+    <p>When invoked a call is made to the WebAPI, which logs it to the database and returns the call.</p>
+
+    <h4>Register / Login</h4>
+    <p>
+        This was the second feature implemented. It built upon the WebAPI Visual Studio project out-of-the-box
+        functionality for registering and authenticating users. A custom ASP.NET Identity implementation was required
+        to interface with PetaPoco.
+    </p>
+    <p>Once a user has registered and logged in they are able to access restricted sections of the site.</p>
+
+    <h4>Notes</h4>
+    <p>
+        This highly unimaginative feature was implemented third. Once a user has logged in they can Create,
+        Retrieve, Update and Delete simple notes. The WebAPI controller restricts access to authenticated users.
+    </p>
+
+</div>
